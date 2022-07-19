@@ -1,13 +1,10 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         
-        count = 0
+        numSet = set(nums)
+       
         
-        nums.sort()
-        
-        for x in nums:
-            if x != count:
-                return count
-            count += 1
-        return count
+        for x in range(len(nums)+1):
+            if x not in numSet:
+                return x
             
